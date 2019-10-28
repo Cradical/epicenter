@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
+import Timer from '../Timer'
+
 const ModalExample = props => {
   const { buttonLabel, className } = props
 
@@ -13,6 +15,7 @@ const ModalExample = props => {
     setNestedModal(!nestedModal)
     setCloseAll(false)
   }
+
   const toggleAll = () => {
     setNestedModal(!nestedModal)
     setCloseAll(true)
@@ -24,18 +27,25 @@ const ModalExample = props => {
         {buttonLabel}
       </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Instructions</ModalHeader>
+        <ModalHeader toggle={toggle} className='bg-danger text-white'>
+          Instructions
+        </ModalHeader>
         <ModalBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          <h5>Make Sure I Am On My Side</h5>
+          <h5>Clear Object From My Mouth</h5>
+          <h5>Don't Hold Me During The Seizure</h5>
+          <h5>Unless I Am Hurt, Call 911 After 5min.</h5>
+          <br />
+          <h5>
+            Hi, my name is Claire. I have epilepsy and am having a seizure.
+            Don’t be afraid. My seizures typically last between two and five
+            minutes. During the seizure, please follow the instructions above.
+            If it is nearby, I keep emergency nasal spray medication in my
+            backpack Thank you for helping me.
+          </h5>
           <br />
           <Button color='success' onClick={toggleNested}>
-            Show Nested Modal
+            Disable Alert
           </Button>
           <Modal
             isOpen={nestedModal}
@@ -53,6 +63,7 @@ const ModalExample = props => {
               </Button>
             </ModalFooter>
           </Modal>
+          <Timer />
         </ModalBody>
         <ModalFooter>
           <Button color='primary' onClick={toggle}>
@@ -69,11 +80,12 @@ const ModalExample = props => {
 
 export default ModalExample
 
-
 // TO ADDS
 /*
 1. ADD A TIMER DISPLAY
 2. CHECKLIST
 3. CONDITIONALLY ALERT FOR NOTIFYING EMERGENCY RESPONDER 
+
+
 
 */

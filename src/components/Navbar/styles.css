@@ -1,0 +1,18 @@
+.dashboard {
+  text-align: center;
+  /* background-color: #a5a4a4; */
+  height: 100vh;
+}
+
+.dashboard-items {
+  margin: auto;
+  padding: 3px 0;
+}
+
+.epi-navbar {
+  background-color: #076970;
+}
+
+.image {
+  width: 100%;
+}

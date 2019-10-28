@@ -1,14 +1,22 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 import EpicenterNavbar from './components/Navbar'
-import SampleInstructionModal from './components/SampleInstructionModal'
+import Lockscreen from './components/Lockscreen'
 
 import './App.css'
 
 function App() {
   return (
     <div className='App'>
-      <SampleInstructionModal />
+      <Switch>
+        <Route path='/lockscreen'>
+          <Lockscreen />
+        </Route>
+        <Route path='/app'>
+          <EpicenterNavbar />
+        </Route>
+      </Switch>
     </div>
   )
 }
